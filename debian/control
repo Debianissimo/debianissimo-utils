@@ -1,0 +1,40 @@
+Source: debianissimo-utils
+Section: unknown
+Priority: required
+Maintainer: Vinche.zsh <vinchethescript@gmail.com>
+Rules-Requires-Root: no
+Standards-Version: 3.9.8
+Build-Depends: debhelper (>= 9), g++
+#Homepage: <insert the upstream URL, if relevant>
+Vcs-Browser: https://github.com/Debianissimo/debianissimo-utils
+Vcs-Git: https://github.com/Debianissimo/debianissimo-utils.git
+
+Package: debianissimo-utils
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Provides:
+ ordissimo-secours (= 4.2.1),
+ ordissimo-secours-conf (= 3.1.0),
+ ordissimo-secours-core (= 4.2.1),
+ ordissimo-secours-kernel (= 4.2.1),
+ ordissimo-version (= 6.1.8),
+ ordissimo-version-base (= 6.1.8),
+ ordissimo-version-core (= 6.1.8),
+ ordissimo-users (= 4.3.1),
+ ordissimo-efi (= 4.0.6)
+Conflicts:
+ ordissimo-secours,
+ ordissimo-secours-conf,
+ ordissimo-secours-core,
+ ordissimo-secours-kernel,
+ ordissimo-version,
+ ordissimo-version-base,
+ ordissimo-version-core,
+ ordissimo-users,
+ ordissimo-efi
+Description: Debianissimo utilities
+  This package contains the basic utilities for the Debianissimo system,
+  such as the `system-info` command, empty/dummy files and scripts
+  and compatibility tweaks.

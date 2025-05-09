@@ -1,0 +1,6 @@
+system-info usr/bin
+update-sysinfo usr/sbin
+update-ordissimo-version usr/sbin
+update-ordissimo-efi usr/sbin
+zz-debianissimo etc/ordissimo
+update-sysinfo.service lib/systemd/system

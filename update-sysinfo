@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+DIRPATH=/etc/ordissimo
+CONFPATH=$DIRPATH/zz-debianissimo
+PREFIX="export ORDISSIMO_"
+
+if [ ! -d $DIRPATH ]; then
+    mkdir -p $DIRPATH || exit 1
+fi
+
+if [[ ! -f $CONFPATH ]]; then
+    # We want to assume the file exists and is not empty
+    exit 2
+fi
+
+# We only need to replace KIND and KERNEL_VERSION
+KIND=$(hostnamectl | grep "Chassis" | cut -d ':' -f2 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//' | awk '{print tolower($1)}')
+KERN=$(uname -r)
+
+sed -i "s/${PREFIX}KIND=.*/${PREFIX}KIND=$KIND/" $CONFPATH
+sed -i "s/${PREFIX}KERNEL_VERSION=.*/${PREFIX}KERNEL_VERSION=$KERN/" $CONFPATH

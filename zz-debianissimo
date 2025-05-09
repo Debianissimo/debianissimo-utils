@@ -1,0 +1,4 @@
+export ORDISSIMO_KIND=auto
+export ORDISSIMO_VERSION=debianissimo
+export ORDISSIMO_KERNEL_VERSION=auto
+export ORDISSIMO_VERSION_FAMILLE=none

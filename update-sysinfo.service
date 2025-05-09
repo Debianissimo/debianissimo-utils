@@ -1,0 +1,11 @@
+[Unit]
+Description=Update System Information
+DefaultDependencies=no
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/update-sysinfo
+
+[Install]
+WantedBy=sysinit.target
