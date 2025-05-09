@@ -1,3 +1,5 @@
 .debhelper/
 *.debhelper.log
 debianissimo-utils/
+files
+debianissimo-utils.substvars
